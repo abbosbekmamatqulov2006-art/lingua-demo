@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#FBFAF8"/>
+
+  <!-- ruled margin, like a language exercise book -->
+  <line x1="96" y1="0" x2="96" y2="630" stroke="#F0EEE9" stroke-width="2"/>
+  <g stroke="#F0EEE9" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126"/>
+    <line x1="0" y1="252" x2="1200" y2="252"/>
+    <line x1="0" y1="378" x2="1200" y2="378"/>
+    <line x1="0" y1="504" x2="1200" y2="504"/>
+  </g>
+
+  <g transform="translate(140, 128)">
+    <rect width="54" height="54" rx="14" fill="#C2410C"/>
+    <text x="27" y="39" text-anchor="middle" fill="#FFFFFF"
+          font-family="Inter, Helvetica, sans-serif" font-size="28" font-weight="600">L</text>
+    <text x="72" y="38" fill="#1B1D22"
+          font-family="Georgia, serif" font-size="40" font-weight="bold">Lingua</text>
+  </g>
+
+  <text x="140" y="292" fill="#1B1D22"
+        font-family="Georgia, serif" font-size="66" font-weight="bold">Learn English from what</text>
+  <text x="140" y="366" fill="#1B1D22"
+        font-family="Georgia, serif" font-size="66" font-weight="bold">you're already studying.</text>
+
+  <text x="140" y="428" fill="#4A5058"
+        font-family="Inter, Helvetica, sans-serif" font-size="27">Explained in your language. Practice aimed at the mistakes</text>
+  <text x="140" y="466" fill="#4A5058"
+        font-family="Inter, Helvetica, sans-serif" font-size="27">speakers of your language actually make.</text>
+
+  <!-- the correction that carries the whole idea -->
+  <g transform="translate(140, 536)">
+    <text x="0" y="0" fill="#B02418" font-family="Georgia, serif" font-size="30"
+          text-decoration="line-through">I have five book</text>
+    <text x="268" y="0" fill="#838B95" font-family="Inter, sans-serif" font-size="26">→</text>
+    <text x="310" y="0" fill="#15694A" font-family="Georgia, serif" font-size="30">I have five books</text>
+  </g>
+</svg>

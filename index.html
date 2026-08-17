@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lingua — learn English from what you're already studying</title>
+<meta name="description" content="Photograph a page, paste a passage, or just ask. Lingua explains it in your language and drills the mistakes speakers of your language actually make.">
+<meta name="theme-color" content="#FBFAF8">
+
+<!-- Link previews. Without these a shared URL renders as a bare string in
+     Telegram and WhatsApp, which is where this audience shares things. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lingua">
+<meta property="og:title" content="Lingua — learn English from what you're already studying">
+<meta property="og:description" content="Bring a page, paste a passage, or just ask a question. Explanations in your own language, practice aimed at the mistakes speakers of your language actually make.">
+<meta property="og:image" content="/static/og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lingua — learn English from what you're already studying">
+<meta name="twitter:description" content="Explanations in your own language. Practice aimed at the mistakes speakers of your language actually make.">
+<meta name="twitter:image" content="/static/og.svg">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23C2410C'/><text y='72' x='50' text-anchor='middle' font-size='62' fill='white' font-family='Georgia,serif' font-weight='bold'>L</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="logo" id="home-link">
+      <span class="mark">L</span><span>Lingua</span>
+    </div>
+    <div class="top-spacer"></div>
+    <div class="streak hidden" id="streak"></div>
+    <button class="icon-btn" id="settings-btn" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- ================================================== start -->
+  <section class="view active" id="view-start">
+    <div class="hero">
+      <h1 id="hero-title">Learn English from whatever you're studying.</h1>
+      <p id="hero-sub">Bring a page, paste a passage, or just ask a question. You'll get the explanation in your own language — and practice aimed at the mistakes speakers of your language actually make.</p>
+    </div>
+
+    <div class="card">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-panel="ask">Ask</button>
+        <button class="tab" data-panel="upload">Photo or file</button>
+        <button class="tab" data-panel="paste">Paste text</button>
+      </div>
+
+      <div class="panel active" id="panel-ask">
+        <span class="eyebrow">Ask the way you'd ask a teacher</span>
+        <input type="text" id="topic-input" placeholder="when do we use should?" autocomplete="off">
+        <div class="chips" id="topic-chips"></div>
+      </div>
+
+      <div class="panel" id="panel-upload">
+        <span class="eyebrow">Coursebook page, notes, handout</span>
+        <div class="dropzone" id="dropzone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>
+          </svg>
+          <strong>Drop a file, or tap to choose</strong>
+          <span>Photo, PDF or text — up to 8 MB</span>
+        </div>
+        <input type="file" id="file-input" accept="image/*,.pdf,.txt,.md" hidden>
+        <img class="preview" id="preview" hidden alt="">
+      </div>
+
+      <div class="panel" id="panel-paste">
+        <span class="eyebrow">Any English passage or word list</span>
+        <textarea id="paste-input" placeholder="Paste a grammar rule, a reading text, or a list of words…"></textarea>
+      </div>
+
+      <div class="settings">
+        <div class="field">
+          <label>Your level</label>
+          <div class="segmented" id="level-picker"></div>
+        </div>
+        <div class="field">
+          <label>Explain everything in</label>
+          <select id="native-picker"></select>
+        </div>
+      </div>
+
+      <div class="sticky-actions">
+        <button class="btn-primary" id="start-btn" style="width:100%">Teach me this</button>
+      </div>
+    </div>
+
+    <div id="resume-slot"></div>
+  </section>
+
+  <!-- ================================================== loading -->
+  <section class="view" id="view-loading">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p id="loading-text">Building your lesson…</p>
+    </div>
+  </section>
+
+  <!-- ================================================== lesson -->
+  <section class="view" id="view-lesson">
+    <div class="lesson-head">
+      <h2 id="lesson-title"></h2>
+      <div class="lesson-meta" id="lesson-meta"></div>
+    </div>
+
+    <nav class="section-nav" id="lesson-nav">
+      <button class="on" data-sec="learn">Lesson</button>
+      <button data-sec="practice">Practice</button>
+      <button data-sec="words">Words</button>
+      <button data-sec="ask">Ask</button>
+      <button data-sec="progress">Progress</button>
+    </nav>
+
+    <div id="sec-learn" class="lesson-sec">
+      <div id="lesson-body"></div>
+      <div class="btn-row" style="margin-top:28px">
+        <button class="btn-primary" id="to-practice">Practise this</button>
+        <button class="btn-ghost" id="new-lesson">Something else</button>
+      </div>
+    </div>
+
+    <div id="sec-practice" class="lesson-sec" hidden></div>
+    <div id="sec-words" class="lesson-sec" hidden></div>
+    <div id="sec-ask" class="lesson-sec" hidden></div>
+    <div id="sec-progress" class="lesson-sec" hidden></div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="/static/js/app.js" type="module"></script>
+</body>
+</html>
